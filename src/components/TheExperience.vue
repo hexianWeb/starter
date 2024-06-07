@@ -16,7 +16,9 @@ onBeforeRender(({ elapsed }) => {
 </script>
 
 <template>
-  <TresPerspectiveCamera :position="[5, 5, 5]" />
+  <TresGroup>
+    <TresPerspectiveCamera :position="[5, 5, 5]" />
+  </TresGroup>
   <OrbitControls />
   <TresAmbientLight
     :intensity="0.5"
