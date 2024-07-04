@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OrbitControls } from "@tresjs/cientos";
+import { OrbitControls } from '@tresjs/cientos'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import { OrbitControls } from "@tresjs/cientos";
     <TresPerspectiveCamera :position="[5, 5, 5]" />
     <OrbitControls />
     <TresAmbientLight :intensity="0.5" color="red" />
-    <TresMesh ref="boxRef" :position="[0, 2, 0]">
+    <TresMesh :position="[0, 2, 0]">
       <TresBoxGeometry :args="[1, 1, 1]" />
       <TresMeshNormalMaterial />
     </TresMesh>

@@ -1,73 +1,73 @@
 <!-- eslint-disable no-console -->
 <script setup lang="ts">
-import type { ThreeEvent } from "@tresjs/core";
-import { TresCanvas } from "@tresjs/core";
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from "three";
-import { TresLeches, useControls } from "@tresjs/leches";
-import { OrbitControls, useGLTF } from "@tresjs/cientos";
-import "@tresjs/leches/styles";
-import TheMonkey from "./TheMonkey.vue";
+import type { ThreeEvent } from '@tresjs/core'
+import { TresCanvas } from '@tresjs/core'
+import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three'
+import { TresLeches, useControls } from '@tresjs/leches'
+import { OrbitControls } from '@tresjs/cientos'
+import '@tresjs/leches/styles'
+
 const gl = {
-  clearColor: "#202020",
+  clearColor: '#202020',
   shadows: true,
   alpha: false,
   shadowMapType: BasicShadowMap,
   outputColorSpace: SRGBColorSpace,
   toneMapping: NoToneMapping,
-};
+}
 
 const { stopPropagation } = useControls({
   stopPropagation: false,
-});
+})
 
 function onClick(ev: ThreeEvent<MouseEvent>) {
-  console.log("click", ev);
+  console.log('click', ev)
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
-  ev.object.material.color.set("#008080");
+  ev.object.material.color.set('#008080')
 }
 
 function onDoubleClick(ev: ThreeEvent<MouseEvent>) {
-  console.log("double-click", ev);
+  console.log('double-click', ev)
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
-  ev.object.material.color.set("#FFD700");
+  ev.object.material.color.set('#FFD700')
 }
 
 function onPointerEnter(ev: ThreeEvent<MouseEvent>) {
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
-  ev.object.material.color.set("#CCFF03");
+  ev.object.material.color.set('#CCFF03')
 }
 
 function onPointerLeave(ev: ThreeEvent<MouseEvent>) {
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
   /*  ev.object.material.color.set('#efefef') */
 }
 
 function onPointerMove(ev: ThreeEvent<MouseEvent>) {
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
 }
 
 function onContextMenu(ev: ThreeEvent<MouseEvent>) {
-  console.log("context-menu", ev);
+  console.log('context-menu', ev)
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
-  ev.object.material.color.set("#FF4500");
+  ev.object.material.color.set('#FF4500')
 }
 
 function onPointerMissed(ev: ThreeEvent<MouseEvent>) {
-  console.log("pointer-missed", ev);
+  console.log('pointer-missed', ev)
   if (stopPropagation.value) {
-    ev.stopPropagation();
+    ev.stopPropagation()
   }
 }
 </script>
