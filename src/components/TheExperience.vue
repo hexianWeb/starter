@@ -2,12 +2,13 @@
 import { useLoop } from '@tresjs/core'
 import { onMounted, ref, shallowRef } from 'vue'
 import { OrbitControls } from '@tresjs/cientos'
-import Father from './Father.vue'
+import DelayEvent from './DelayEvent.vue'
+import Event from './Event.vue'
 
 const showRef = ref(false)
 
 onMounted(() => {
-  setInterval(() => {
+  setTimeout(() => {
     showRef.value = !showRef.value
   }, 2000)
 })
@@ -26,7 +27,8 @@ onMounted(() => {
     :intensity="1"
     cast-shadow
   />
-  <Father v-if="showRef" />
+  <Event />
+  <DelayEvent v-if="showRef" />
   <TresAxesHelper />
   <TresGridHelper :args="[10, 10, 0x444444, 'teal']" />
 </template>
